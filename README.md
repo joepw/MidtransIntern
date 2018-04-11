@@ -16,16 +16,16 @@ ex :
 Problem 6 :
 [input] : first line will be string1, second line will be string 2
 ex: 
-> abcde
+> abcde  
 > bczah
 
 Problem 7 :
 [input] : first line will be an integer x indicating the number of input allowed, followed by x line(s) of input, can be "add ..." or "find ..."
 ex:
-> 5
-> add hendra
-> add sreix
-> find he
-> add hendro
+> 5  
+> add hendra  
+> add sreix  
+> find he  
+> add hendro  
 > find h
 
