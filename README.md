@@ -4,14 +4,18 @@ Software Engineering Intern Examination
 Instruction on how to run code:
 
 Problem 2 :
-[input] : 4 strings separated with spaces (" ")
+[input] : any number of line containing 4 strings separated with spaces (" ")
 ex : 
-> 1 e1 p1 c1
+> 1 e1 p1 c1  
+> 2 e2 p2 c2  
+> ..and so on
 
 Problem 3 :
-[input] : any string that will be normalized
+[input] : any number of line containing strings that will be normalized
 ex : 
-> +6281298490805
+> +6281298490805  
+> 08188188181?  
+> ..and so on
 
 Problem 6 :
 [input] : first line will be string1, second line will be string 2
