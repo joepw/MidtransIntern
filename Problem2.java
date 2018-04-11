@@ -19,6 +19,7 @@ public class Problem2 {
 			Transaction newTransaction = new Transaction(split[0], split[1], split[2], split[3]);
 			transaction.addTransaction(newTransaction);
 			customer.addCustomer(newTransaction);
+			customer.checkDuplicates();
 			customer.printAll();
 		}
 
@@ -136,7 +137,50 @@ class CustomerList {
 	}
 	
 	public void checkDuplicates() {
+
+		TreeSet<Integer> removedCustomerIndex = new TreeSet<Integer>();
+		for(Customer c : this.customerList) {
+			for(Customer d : this.customerList) {
+				if(c != d && customerList.indexOf(c) < customerList.indexOf(d)) {
+					for(String id : d.getTransactionId()) {
+						if(c.getTransactionId().contains(id)) {
+							addAllItem(c, d);
+							removedCustomerIndex.add(customerList.indexOf(d));
+						}
+					}
+					for(String email : d.getEmails()) {
+						if(c.getEmails().contains(email)) {
+							addAllItem(c, d);
+							removedCustomerIndex.add(customerList.indexOf(d));
+						}
+					}
+					for(String phone : d.getPhones()) {
+						if(c.getPhones().contains(phone)) {
+							addAllItem(c, d);
+							removedCustomerIndex.add(customerList.indexOf(d));
+						}
+					}
+					for(String card : d.getCards()) {
+						if(c.getCards().contains(card)) {
+							addAllItem(c, d);
+							removedCustomerIndex.add(customerList.indexOf(d));
+						}
+					}
+				}
+			}
+		}
 		
+		
+		for(int removed : removedCustomerIndex.descendingSet()) {
+			this.customerList.remove(removed);
+		}
+	}
+	
+	public void addAllItem(Customer c, Customer d) {
+		c.getTransactionId().addAll(d.getTransactionId());
+		c.getEmails().addAll(d.getEmails());
+		c.getPhones().addAll(d.getPhones());
+		c.getCards().addAll(d.getCards());
 	}
 }
 
