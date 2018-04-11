@@ -92,7 +92,7 @@ class CustomerList {
 					c.getPhones().contains(transaction.phone) ||
 					c.getCards().contains(transaction.card)) {
 				c.addTransactionId(transaction.id);
-				c.addEmail(transaction.id);
+				c.addEmail(transaction.email);
 				c.addPhone(transaction.phone);
 				c.addCard(transaction.card);
 				exist = true;
@@ -113,22 +113,22 @@ class CustomerList {
 			System.out.println( "customer" + custId + ":");
 			System.out.print(" transactions: [");
 			for(String id : c.getTransactionId()) {
-				System.out.print(id + ",");
+				System.out.print(id + " ");
 			}
 			System.out.println("]");
 			System.out.print(" emails: [");
 			for(String email : c.getEmails()) {
-				System.out.print(email + ",");
+				System.out.print(email + " ");
 			}
 			System.out.println("]");
 			System.out.print(" phones: [");
 			for(String phone : c.getPhones()) {
-				System.out.print(phone + ",");
+				System.out.print(phone + " ");
 			}
 			System.out.println("]");
 			System.out.print(" cards: [");
 			for(String card : c.getCards()) {
-				System.out.print(card + ",");
+				System.out.print(card + " ");
 			}
 			System.out.println("]");
 			System.out.println();
